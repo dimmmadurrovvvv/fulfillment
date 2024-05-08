@@ -1,0 +1,36 @@
+.el-dialog {
+  padding: rem(64px) rem(56px);
+
+  border-radius: rem($border-radius-big);
+
+  min-width: 900px !important;
+  margin-top: 5vh;
+
+  &__title {
+    @include font-title;
+    @include text-huge;
+  }
+
+  &__header {
+    padding-bottom: rem(60px);
+  }
+
+  &__headerbtn {
+    top: rem(28px);
+    right: rem(18px);
+
+    width: rem(60px);
+    height: rem(60px);
+
+    border-radius: 50%;
+    background-color: #f6f6f6;
+    flex-shrink: 0;
+  }
+
+  &__close {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
