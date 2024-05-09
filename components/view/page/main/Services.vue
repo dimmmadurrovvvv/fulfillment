@@ -27,6 +27,11 @@
                             :text="card.button.text"
                             theme="transparent"
                             @click="onCardButtonClick(card.button.callback)" />
+                        <UiButton v-if="card.button"
+                            class="main-page-services__card-details-button"
+                            :text="card.button.text"
+                            theme="transparent"
+                            @click="onCardButtonClick(card.button.callback, card.button.title)" />
                     </div>
 
                     <div v-if="card.image"
@@ -55,6 +60,7 @@ const cards = [
     },
     {
         subtitle: 'Доставка товара из Китая',
+        title: 'Доставка товара из Китая',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -62,6 +68,7 @@ const cards = [
     },
     {
         subtitle: 'Забор товара',
+        title: 'Забор товара',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -69,6 +76,7 @@ const cards = [
     },
     {
         subtitle: 'Доставка товара на склад',
+        title: 'Доставка товара на склад',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -76,6 +84,7 @@ const cards = [
     },
     {
         subtitle: 'Доставка товара на ПВЗ',
+        title: 'Доставка товара на ПВЗ',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -83,6 +92,7 @@ const cards = [
     },
     {
         subtitle: 'Доп.услуги',
+        title: 'Доп.услуги',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -90,13 +100,15 @@ const cards = [
     },
     {
         subtitle: 'Хранение товара',
+        title: 'Хранение товара',
         button: {
             text: 'Узнать больше',
             callback: () => { }
         }
     },
     {
-        subtitle: 'Фулфилмент "под ключ"',
+        subtitle: 'Фулфилмент "под ключ',
+        title: 'Фулфилмент "под ключ',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -105,10 +117,11 @@ const cards = [
     }
 ];
 
-function onCardButtonClick(callback: () => any) {
+function onCardButtonClick(callback: () => any, title: string) {
     console.log('hello')
     callback();
     showPopup.value = true;
+    LazyViewPopupBase.title = title; // Установите заголовок модального окна
 }
 </script>
 
