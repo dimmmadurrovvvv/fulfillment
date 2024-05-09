@@ -8,11 +8,10 @@
             <div class="main-page-pricing__buttons">
                 <button class="main-page-pricing__button">
                     <img src="./public/images/icons/chevron-left.svg" alt="Left" />
-                    <UiIcon name="chevron-left" />
+   
                 </button>
                 <button class="main-page-pricing__button">
                     <img src="./public/images/icons/chevron-right.svg" alt="Left" />
-                    <UiIcon name="chevron-right" />
                 </button>
             </div>
         </header>
