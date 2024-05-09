@@ -35,45 +35,63 @@
 
     &__inner {
         @include container;
-
         display: flex;
+        flex-direction: row; // Default is row
+        align-items: center; // Center items vertically in the container
+
+        @media #{$screen-tablet} {
+            flex-direction: column; // Stack elements vertically on smaller screens
+        }
     }
 
     &__info {
         position: relative;
         z-index: 1;
-        
-        width: rem(958px);
+        width: 100%; // Full width on mobile devices
+        max-width: rem(958px); // Limit width on larger screens
 
         &-title {
             @include font-title;
             @include text-huge;
+            text-align: center; // Center align the title on smaller screens
         }
 
         &-paragraph {
             @include text-big($font-weight-medium, $line-height-big);
-            width: rem(700px);
+            width: 100%; // Full width to utilize space
+            max-width: rem(700px); // Limit width for readability
             margin-top: rem(20px);
+            margin-left: auto; // Centering if needed
+            margin-right: auto;
         }
 
         &-detail-button {
             margin-top: rem(40px);
+            display: block; // Ensure the button is a block element to center
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
     &__image {
-        position: absolute;
+        position: absolute; // Adjust image positioning for mobile
         z-index: 0;
         right: 0;
-
-        width: 50%;
-        height: 100%;
+        top: 0; // Adjust top on mobile to not overlap
+        width: 100%; // Full width on mobile
+        height: auto; // Maintain aspect ratio
+        max-width: 50%; // Limit width on larger screens
+        max-height: 100%;
 
         &-pic {
-            @include absolute-all-null;
-            @include object-contain-full;
+            width: 100%;
+            height: auto; // Adjust height to maintain aspect ratio
         }
 
+        @media #{$screen-tablet} {
+            position: relative; // Relative positioning on smaller screens
+            margin-top: rem(20px);
+        }
     }
 }
 </style>
