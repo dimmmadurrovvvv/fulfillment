@@ -70,6 +70,7 @@ const headerLinks = [
                     @include text-normal;
 
                     padding: 1px rem(10px);
+                    font-weight: bold;
                 }
             }
         }
