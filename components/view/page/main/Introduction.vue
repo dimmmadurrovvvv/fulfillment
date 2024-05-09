@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 
-const title = 'Order care - Ваш фулфилмент полного цикла Москве'
+const title = 'Order care - Ваш фулфилмент полного цикла\nв Москве'
 
 </script>
 
@@ -54,7 +54,7 @@ const title = 'Order care - Ваш фулфилмент полного цикл�
         }
 
         &-subtitle {
-            @include text-big($font-weight-semibold);
+            @include text-big($font-weight-medium);
 
             margin-top: rem(16px);
         }
