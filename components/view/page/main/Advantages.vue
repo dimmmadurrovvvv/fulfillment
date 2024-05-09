@@ -106,7 +106,7 @@ const cards = [
         bottom: 0;
         max-width: 500px;
 
-        transform: translateX(50px);
+        transform: translateX(-100px);
 
         &-pic {
             @include object-contain-full;
