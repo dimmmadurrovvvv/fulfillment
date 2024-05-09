@@ -26,30 +26,28 @@
                             class="main-page-services__card-details-button"
                             :text="card.button.text"
                             theme="transparent"
-                            @click="onCardButtonClick(card.button.callback)" />
-                        <UiButton v-if="card.button"
-                            class="main-page-services__card-details-button"
-                            :text="card.button.text"
-                            theme="transparent"
-                            @click="onCardButtonClick(card.button.callback, card.button.title)" />
+                            @click="onCardButtonClick(card.button.callback, card.subtitle)" />
                     </div>
 
                     <div v-if="card.image"
                         class="main-page-services__card-image">
-                        <img class="main-page-services__card-image-pic"
-                            :src="card.image"
-                            alt="Иллюстрация карточки">
+                        <img :src="card.image"
+                             alt="Иллюстрация карточки"
+                             class="main-page-services__card-image-pic">
                     </div>
                 </div>
             </li>
         </ul>
         <LazyViewPopupBase v-model="showPopup"
-            title="Логистические услуги" />
+            :title="popupTitle" />
     </section>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
 const showPopup = ref(false);
+const popupTitle = ref('Логистические услуги');
 
 const cards = [
     {
@@ -60,7 +58,6 @@ const cards = [
     },
     {
         subtitle: 'Доставка товара из Китая',
-        title: 'Доставка товара из Китая',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -68,7 +65,6 @@ const cards = [
     },
     {
         subtitle: 'Забор товара',
-        title: 'Забор товара',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -76,7 +72,6 @@ const cards = [
     },
     {
         subtitle: 'Доставка товара на склад',
-        title: 'Доставка товара на склад',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -84,7 +79,6 @@ const cards = [
     },
     {
         subtitle: 'Доставка товара на ПВЗ',
-        title: 'Доставка товара на ПВЗ',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -92,7 +86,6 @@ const cards = [
     },
     {
         subtitle: 'Доп.услуги',
-        title: 'Доп.услуги',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -100,7 +93,6 @@ const cards = [
     },
     {
         subtitle: 'Хранение товара',
-        title: 'Хранение товара',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -108,7 +100,6 @@ const cards = [
     },
     {
         subtitle: 'Фулфилмент "под ключ',
-        title: 'Фулфилмент "под ключ',
         button: {
             text: 'Узнать больше',
             callback: () => { }
@@ -118,10 +109,9 @@ const cards = [
 ];
 
 function onCardButtonClick(callback: () => any, title: string) {
-    console.log('hello')
     callback();
+    popupTitle.value = title; // Обновляем заголовок модального окна
     showPopup.value = true;
-    LazyViewPopupBase.title = title; // Установите заголовок модального окна
 }
 </script>
 
