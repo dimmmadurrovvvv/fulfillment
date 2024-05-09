@@ -19,7 +19,7 @@
 
             <div class="main-page-advantages__image">
                 <img class="main-page-advantages__image-pic"
-                    src="/images/static/Group 35936.png"
+                    src="/images/static/steps-in-circle.png"
                     alt="Иллюстрация ступеней">
             </div>
         </div>
