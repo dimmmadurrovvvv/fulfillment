@@ -7,7 +7,7 @@
                     {{ title }}
                 </h1>
                 <p class="main-page-introduction__info-subtitle">
-                    Доставим ваши заказы до складов и ПВЗ маркетплейсов в Москве
+                    Доставим ваши товары от Китая до маркетплейса
                 </p>
                 <UiButton text="Стать клиентом"
                     class="main-page-introduction__info-submit" />
