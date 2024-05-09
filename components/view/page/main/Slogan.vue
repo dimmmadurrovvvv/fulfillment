@@ -3,7 +3,7 @@
         <div class="main-page-slogan__inner">
             <div class="main-page-slogan__title">
                 <h2 class="main-page-slogan__title-text">
-                    С нами у вас не будет никаких расходов
+                    С нами у вас не будет никаких лишних расходов
                 </h2>
             </div>
 

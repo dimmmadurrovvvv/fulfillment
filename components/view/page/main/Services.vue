@@ -54,28 +54,28 @@ const cards = [
         big: true
     },
     {
-        subtitle: 'Логистические услуги',
+        subtitle: 'Доставка товара из Китая',
         button: {
             text: 'Узнать больше',
             callback: () => { }
         }
     },
     {
-        subtitle: 'Услуги по работе с товаром',
+        subtitle: 'Забор товара',
         button: {
             text: 'Узнать больше',
             callback: () => { }
         }
     },
     {
-        subtitle: 'Упаковка товара',
+        subtitle: 'Доставка товара на склад',
         button: {
             text: 'Узнать больше',
             callback: () => { }
         }
     },
     {
-        subtitle: 'Доп.услуги при упаковке товара',
+        subtitle: 'Доставка товара на ПВЗ',
         button: {
             text: 'Узнать больше',
             callback: () => { }
