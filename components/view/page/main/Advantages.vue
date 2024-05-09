@@ -67,7 +67,7 @@ const cards = [
         align-items: center;
 
         width: auto;
-        min-width: rem(370px);
+        min-width: rem(300px);
         padding: rem(22px) rem(28px);
 
         border-radius: rem($border-radius-big);
