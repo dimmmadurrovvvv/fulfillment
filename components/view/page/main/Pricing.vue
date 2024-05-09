@@ -7,11 +7,11 @@
             </h2>
             <div class="main-page-pricing__buttons">
                 <button class="main-page-pricing__button">
-                    <img src="./public/images/icons/chevron-left.svg" alt="Left" />
+                    <img src="./public/images/icons/chevron-left.svg" alt="left" />
    
                 </button>
                 <button class="main-page-pricing__button">
-                    <img src="./public/images/icons/chevron-right.svg" alt="Left" />
+                    <img src="./public/images/icons/chevron-right.svg" alt="right" />
                 </button>
             </div>
         </header>

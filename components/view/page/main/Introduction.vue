@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 
-const title = 'Order care - Ваш фулфилмент полного цикла\nв Москве'
+const title = 'Order care - Ваш фулфилмент полного цикла в Москве'
 
 </script>
 
