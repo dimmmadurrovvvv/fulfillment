@@ -32,10 +32,6 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-    title: String,
-    items: Array // Убедитесь, что принимаете items как prop
-});
 defineProps({
     title: {
         type: String,
