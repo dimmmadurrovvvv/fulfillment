@@ -125,7 +125,7 @@ const cards = [
         ],
         button: {
             text: 'Подробнее',
-            callback: () => { }
+            callback: () => window.open('/images/static/pricing.pdf', '_blank')
         }
     },
     {
@@ -146,7 +146,7 @@ const cards = [
         ],
         button: {
             text: 'Подробнее',
-            callback: () => { }
+            callback: () => window.open('/images/static/pricing.pdf', '_blank')
         }
     },
     {
@@ -167,7 +167,7 @@ const cards = [
         ],
         button: {
             text: 'Подробнее',
-            callback: () => { }
+            callback: () => window.open('/images/static/pricing.pdf', '_blank')
         }
     },
     {
@@ -188,7 +188,7 @@ const cards = [
         ],
         button: {
             text: 'Подробнее',
-            callback: () => { }
+            callback: () => window.open('/images/static/pricing.pdf', '_blank')
         }
     },
     {
@@ -209,7 +209,7 @@ const cards = [
         ],
         button: {
             text: 'Подробнее',
-            callback: () => { }
+            callback: () => window.open('/images/static/pricing.pdf', '_blank')
         }
     },
 ]
