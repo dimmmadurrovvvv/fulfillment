@@ -40,7 +40,7 @@
                 <li>
                   <a class="header__nav-links-item-link"
                      href="tel:+74959999999">
-                    +7 495 999-99-99
+                     +7 (906) 006 00 64
                   </a>
                 </li>
               </ul>
