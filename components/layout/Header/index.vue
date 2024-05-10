@@ -16,7 +16,6 @@
                                 :to="link.path">
                                 {{ link.text }}
                             </NuxtLink>
-                            <a class="header__nav-links-item-link" :href="'/#about'">{{ link.text }}</a>
                         </li>
                     </ul>
                 </nav>
