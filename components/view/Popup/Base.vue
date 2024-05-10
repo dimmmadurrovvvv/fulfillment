@@ -1,38 +1,41 @@
 <template>
-    <ClientOnly>
-        <ElDialog class="popup-base"
-            v-model="dialogVisible"
-            :title="title">
-            <div class="popup-base__content">
-                <ul class="popup-base__content-list">
-                    <li class="popup-base__content-list-item"
-                        v-for="item in items"
-                        :key="item.text">
-                        <p class="popup-base__content-list-item-text">
-                            {{ item.text }}
-                        </p>
+  <ClientOnly>
+      <ElDialog class="popup-base"
+          v-model="dialogVisible"
+          :title="title">
+          <div class="popup-base__content">
+              <ul class="popup-base__content-list">
+                  <li class="popup-base__content-list-item"
+                      v-for="item in items"
+                      :key="item.text">
+                      <p class="popup-base__content-list-item-text">
+                          {{ item.text }}
+                      </p>
 
-                        <span class="popup-base__content-list-item-price">
-                            {{ item.price }}
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <template #footer>
-                <div class="popup-base__footer">
-                    <UiButton class="popup-base__footer-button"
-                        text="Скачать прайс" />
-                    <UiButton class="popup-base__footer-button"
-                        text="Посмотреть прайс"
-                        theme="transparent" />
-                </div>
-            </template>
-        </ElDialog>
-    </ClientOnly>
+                      <span class="popup-base__content-list-item-price">
+                          {{ item.price }}
+                      </span>
+                  </li>
+              </ul>
+          </div>
+          <template #footer>
+              <div class="popup-base__footer">
+                  <UiButton class="popup-base__footer-button"
+                      text="Скачать прайс" />
+                  <UiButton class="popup-base__footer-button"
+                      text="Посмотреть прайс"
+                      theme="transparent" />
+              </div>
+          </template>
+      </ElDialog>
+  </ClientOnly>
 </template>
 
 <script lang="ts" setup>
-
+const props = defineProps({
+    title: String,
+    items: Array // Убедитесь, что принимаете items как prop
+});
 defineProps({
     title: {
         type: String,
@@ -49,7 +52,7 @@ const items = [
     { text: 'Доставка товара объемом до 1 м3', price: 'от 2 000 р' },
     { text: 'Доставка товара объемом до 1 м3 до 2 м3', price: 'от 2 000 р' },
 ]
-
+const dialogVisible = ref(true);
 </script>
 
 <style scoped lang="scss">

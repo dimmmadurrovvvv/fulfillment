@@ -26,7 +26,7 @@
                             class="main-page-services__card-details-button"
                             :text="card.button.text"
                             theme="transparent"
-                            @click="onCardButtonClick(card.button.callback, card.subtitle)" />
+                            @click="onCardButtonClick(card.button.callback, card.subtitle, card.items)" />
                     </div>
 
                     <div v-if="card.image"
@@ -48,6 +48,7 @@ import { ref } from 'vue';
 
 const showPopup = ref(false);
 const popupTitle = ref('Логистические услуги');
+const popupItems = ref([]);
 
 const cards = [
     {
@@ -95,9 +96,10 @@ const cards = [
     }
 ];
 
-function onCardButtonClick(callback: () => any, title: string) {
+function onCardButtonClick(callback: () => any, title: string, items: any[]) {
     callback();
     popupTitle.value = title; // Обновляем заголовок модального окна
+    popupItems.value = items; // Обновляем элементы для отображения в модальном окне
     showPopup.value = true;
 }
 </script>
