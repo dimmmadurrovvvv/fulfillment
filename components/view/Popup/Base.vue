@@ -52,7 +52,6 @@ const items = [
     { text: 'Доставка товара объемом до 1 м3', price: 'от 2 000 р' },
     { text: 'Доставка товара объемом до 1 м3 до 2 м3', price: 'от 2 000 р' },
 ]
-const dialogVisible = ref(true);
 </script>
 
 <style scoped lang="scss">
