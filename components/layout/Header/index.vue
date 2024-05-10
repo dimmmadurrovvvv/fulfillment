@@ -1,207 +1,116 @@
 <template>
-    <header class="header">
-        <div class="header__inner">
-            <div class="header__col">
-                <div class="header__logo">
-                  <LayoutLogo />
-                </div>
-            </div>
-            <div class="header__col">
-                <nav class="header__nav">
-                    <ul class="header__nav-links">
-                        <li class="header__nav-links-item"
-                            v-for="(link, idx) in headerLinks"
-                            :key="idx">
-                            <NuxtLink class="header__nav-links-item-link"
-                                :to="link.path">
-                                {{ link.text }}
-                            </NuxtLink>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="header__col">
-                <div class="header__meta">
-                    <a class="header__meta-tel"
-                        href="tel:+79060060064">
-                        +7 (906) 006 00 64
-                    </a>
-                </div>
-            </div>
-              <ul class="header__row header__nav-links">
-                <li class="header__nav-links-item"
-                    v-for="(link, idx) in headerLinks"
-                    :key="idx">
-                  <NuxtLink class="header__nav-links-item-link"
-                            :to="link.path">
-                    {{ link.text }}
-                  </NuxtLink>
-                </li>
-                <li>
-                  <a class="header__nav-links-item-link"
-                     href="tel:+79060060064">
-                     +7 (906) 006 00 64
-                  </a>
-                </li>
+  <ClientOnly>
+      <ElDialog class="popup-base"
+          v-model="dialogVisible"
+          :title="title">
+          <div class="popup-base__content">
+              <ul class="popup-base__content-list">
+                  <li class="popup-base__content-list-item"
+                      v-for="item in items"
+                      :key="item.text">
+                      <p class="popup-base__content-list-item-text">
+                          {{ item.text }}
+                      </p>
+
+                      <span class="popup-base__content-list-item-price">
+                          {{ item.price }}
+                      </span>
+                  </li>
               </ul>
-          <div class="icon-menu">
-            <span></span>
           </div>
-        </div>
-    </header>
+          <template #footer>
+              <div class="popup-base__footer">
+                  <UiButton class="popup-base__footer-button"
+                      text="Скачать прайс" />
+                  <UiButton class="popup-base__footer-button"
+                      text="Посмотреть прайс"
+                      theme="transparent" />
+              </div>
+          </template>
+      </ElDialog>
+  </ClientOnly>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 
-const headerLinks = [
-    { text: 'О нас', path: './#about' },
-    { text: 'Наш склад', path: './#stocks' },
-    { text: 'Наши услуги', path: './#services' },
-    { text: 'Наши цены', path: './#pricing' },
-    { text: 'FAQ', path: './#faq' },
-    { text: 'Связь с нами', path: './#feedback' },
+defineProps({
+  title: {
+      type: String,
+      required: false,
+      default: ''
+  }
+})
+
+const dialogVisible = defineModel<boolean>();
+
+const items = [
+  { text: 'Забор товара с рынков Москвы: Южные ворота, Садовод, ТЯК', price: 'от 2 000 р' },
+  { text: 'Забор товара по Москве и МО', price: 'от 2 000 р' },
+  { text: 'Доставка товара объемом до 1 м3', price: 'от 2 000 р' },
+  { text: 'Доставка товара объемом до 1 м3 до 2 м3', price: 'от 2 000 р' },
 ]
 
-  document?.addEventListener('click', function (e) {
-    if (e.target && e.target?.closest('.icon-menu')) {
-      document.documentElement.classList.toggle('menu-open')
-    }
-  })
 </script>
 
 <style scoped lang="scss">
+.popup-base {
+  &__content {
 
-html {
-  scroll-behavior: smooth;
-}
-.header {
-    height: rem($header-height-desktop);
-
-    box-shadow: $box-shadow-default;
-    background-color: $fill-col-primary;
-
-  &__logo {
-    width: rem(36px);
-    height: rem(36px);
-  }
-
-    &__inner {
-        @include flex-space-between;
-        @include container;
-
-        height: 100%;
-    }
-
-    &__col:not(:first-child) {
-      @media (max-width: $container-width-tablet) {
-        display: none;
-      }
-    }
-
-    &__nav {
-        &-links {
-            display: flex;
-            align-items: center;
-
-            &-item {
-                @include x-margin-items(0);
-
-                &-link {
-                    @include text-normal;
-
-                    padding: 1px rem(10px);
-                    font-weight: 600;
-                }
+      &-list {
+          &-item {
+              @include flex-space-between;
+              gap: 20px;
+              height: rem(95px);
+            @media (max-width: $container-width-mobile-big) {
+              height: 100%;
             }
-        }
-    }
+            @media (max-width: $container-width-mobile-big) {
+              flex-direction: column;
+              gap: 10px;
+              align-items: flex-start;
+            }
 
-    &__meta {
-        &-tel {
-            @include font-title;
-            @include text-normal;
-        }
-    }
-}
+              &:not(:first-child) {
+                @media (max-width: $container-width-mobile-big) {
+                  padding-top: 10px;
+                }
+              }
+                &:not(:last-child) {
+                @media (max-width: $container-width-mobile-big) {
+                  padding-bottom: 10px;
+                }
+                  border-bottom: 1px solid #B8B8B8;
+              }
 
-.header__row {
-  @media (min-width: $container-width-tablet) {
-    display: none;
+              &-text {
+                  @include text-big;
+              }
+
+              &-price {
+                white-space: nowrap;
+                  @include text-big($font-weight-semibold);
+              }
+          }
+      }
   }
 
-  display: flex;
-  flex-direction: column;
-  transition: 0.3s all ease;
-  gap: 10px;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  bottom: 0;
-  box-shadow: $box-shadow-default;
-  background-color: $fill-col-primary;
-  padding: 10px;
-  padding-top: calc(rem($header-height-desktop) + rem(10));
-  padding-left: 40px;
-  align-items: flex-start;
+  &__footer {
+      display: flex;
+      align-items: flex-start;
 
-  .menu-open & {
-    right: 0;
-  }
-}
+      margin-top: rem(36px);
 
-.icon-menu {
-  display: none;
-
-  @media (max-width: $container-width-tablet) {
-    display: block;
-    position: relative;
-    width: rem(30);
-    height: rem(18);
-    cursor: pointer;
-    z-index: 5;
-
-    span,
-    &::before,
-    &::after {
-      content: "";
-      transition: all 0.3s ease 0s;
-      right: 0;
-      position: absolute;
-      width: 100%;
-      height: rem(2);
-      background-color: #000;
+    @media (max-width: $container-width-tablet) {
+      flex-direction: column;
+      gap: 20px;
     }
-
-    &::before {
-      top: 0;
-    }
-
-    &::after {
-      bottom: 0;
-    }
-
-    span {
-      top: calc(50% - rem(1));
-    }
-
-    .menu-open & {
-      span {
-        width: 0;
+      &-button {
+        @media (max-width: $container-width-tablet) {
+          width: 100%;
+          margin: 0;
+        }
+          @include x-margin-items(22px);
       }
-
-      &::before,
-      &::after {}
-
-      &::before {
-        top: calc(50% - rem(1));
-        transform: rotate(-45deg);
-      }
-
-      &::after {
-        bottom: calc(50% - rem(1));
-        transform: rotate(45deg);
-      }
-    }
   }
 }
 </style>
