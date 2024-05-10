@@ -23,7 +23,7 @@
             <div class="header__col">
                 <div class="header__meta">
                     <a class="header__meta-tel"
-                        href="tel:+74959999999">
+                        href="tel:+79060060064">
                         +7 (906) 006 00 64
                     </a>
                 </div>

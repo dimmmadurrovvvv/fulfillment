@@ -64,28 +64,14 @@ const cards = [
         }
     },
     {
-        subtitle: 'Забор товара',
+        subtitle: 'Забор и доставка товара',
         button: {
             text: 'Узнать больше',
             callback: () => { }
         }
     },
     {
-        subtitle: 'Доставка товара на склад',
-        button: {
-            text: 'Узнать больше',
-            callback: () => { }
-        }
-    },
-    {
-        subtitle: 'Доставка товара на ПВЗ',
-        button: {
-            text: 'Узнать больше',
-            callback: () => { }
-        }
-    },
-    {
-        subtitle: 'Доп.услуги',
+        subtitle: 'Обработка товара',
         button: {
             text: 'Узнать больше',
             callback: () => { }

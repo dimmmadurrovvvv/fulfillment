@@ -59,10 +59,26 @@ const items = [
         &-list {
             &-item {
                 @include flex-space-between;
-
+                gap: 20px;
                 height: rem(95px);
+              @media (max-width: $container-width-mobile-big) {
+                height: 100%;
+              }
+              @media (max-width: $container-width-mobile-big) {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+              }
 
-                &:not(:last-child) {
+                &:not(:first-child) {
+                  @media (max-width: $container-width-mobile-big) {
+                    padding-top: 10px;
+                  }
+                }
+                  &:not(:last-child) {
+                  @media (max-width: $container-width-mobile-big) {
+                    padding-bottom: 10px;
+                  }
                     border-bottom: 1px solid #B8B8B8;
                 }
 
@@ -71,6 +87,7 @@ const items = [
                 }
 
                 &-price {
+                  white-space: nowrap;
                     @include text-big($font-weight-semibold);
                 }
             }
@@ -83,7 +100,15 @@ const items = [
 
         margin-top: rem(36px);
 
+      @media (max-width: $container-width-tablet) {
+        flex-direction: column;
+        gap: 20px;
+      }
         &-button {
+          @media (max-width: $container-width-tablet) {
+            width: 100%;
+            margin: 0;
+          }
             @include x-margin-items(22px);
         }
     }
