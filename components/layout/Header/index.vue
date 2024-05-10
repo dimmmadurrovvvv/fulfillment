@@ -54,7 +54,7 @@
 <script setup lang="ts">
 
 const headerLinks = [
-    { text: 'О нас', path: '#/about' },
+    { text: 'О нас', path: '/#about' },
     { text: 'Наш склад', path: '#' },
     { text: 'Наши услуги', path: '#' },
     { text: 'Наши цены', path: '#' },
@@ -120,6 +120,10 @@ const headerLinks = [
     }
 }
 
+
+.html {
+  scroll-behavior: smooth;
+}
 .header__row {
   @media (min-width: $container-width-tablet) {
     display: none;
