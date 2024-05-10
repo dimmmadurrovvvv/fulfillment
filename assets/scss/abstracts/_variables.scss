@@ -111,15 +111,17 @@ $screen-tablet: '(max-width: 1279px)';
 /**
 * Layout
 */
-$container-width-mobile: 360px;
+$container-width-mobile: 375px;
+$container-width-mobile-big: 425px;
 $container-width-tablet: 768px;
+$container-width-laptop: 1024px;
 $container-width-desktop: 1660px;
 
 $container-horizontal-padding-desktop: 48px;
 $container-horizontal-padding-tablet: 20px;
 $container-horizontal-padding-mobile: 20px;
 
-$container-min-width: 1280px;
+$container-min-width: 320px;
 
 /**
 * Radius

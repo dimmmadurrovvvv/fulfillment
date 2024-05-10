@@ -38,13 +38,16 @@
 .main-page-feedback {
     position: relative;
 
-    height: 640px;
-
     &__inner {
         @include container;
 
         display: flex;
         justify-content: flex-end;
+
+      @media (max-width: $container-width-laptop) {
+        flex-direction: column-reverse;
+        gap: 20px;
+      }
     }
 
     &__image {
@@ -55,9 +58,22 @@
         height: 500px;
         width: 60%;
 
+      @media (max-width: $container-width-mobile-big) {
+        display: none;
+      }
+      @media (max-width: $container-width-laptop) {
+        position: relative;
+        height: auto;
+        width: 100%;
+      }
         &-pic {
             @include absolute-all-null;
             @include object-contain-full;
+
+          @media (max-width: $container-width-laptop) {
+            max-height: 370px;
+            position: relative;
+          }
         }
     }
 
@@ -73,11 +89,29 @@
         width: 40%;
         margin-top: rem(126px);
 
+      @media (max-width: $container-width-laptop) {
+        width: 80%;
+        justify-content: center;
+        margin: 0 auto;
+      }
+      @media (max-width: $container-width-mobile-big) {
+        margin-top: 0;
+        width: 100%;
+      }
         &-title {
             @include font-title;
             @include text-huge;
 
             margin-bottom: rem(20px);
+          @media (max-width: $container-width-laptop) {
+            text-align: center;
+          }
+          @media (max-width: $container-width-tablet) {
+            @include text-great;
+          }
+          @media (max-width: $container-width-mobile-big) {
+            @include text-big;
+          }
         }
 
         &-control {
@@ -100,8 +134,12 @@
         }
 
         &-submit {
-            width: fit-content;
+          @media (max-width: $container-width-laptop) {
+            margin: 0 auto;
             margin-top: rem(82px);
+          }
+            width: fit-content;
+          margin-top: rem(82px);
         }
     }
 }

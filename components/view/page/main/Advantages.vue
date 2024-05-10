@@ -47,29 +47,42 @@ const cards = [
 
         padding-top: rem(90px);
         padding-bottom: rem(90px);
+      @media (max-width: $container-width-tablet) {
+        gap: 40px;
+        flex-direction: column;
+        padding-top: rem(60px);
+        padding-bottom: rem(60px);
+      }
 
+
+      @media (max-width: 1350px){
+        justify-content: center;
+      }
         position: relative;
     }
 
     &__list {
         display: flex;
-
-        &-item {
-            @include x-margin-items(20px);
-        }
+      gap: 20px;
+      @media (max-width: 1350px) {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
     }
 
     &__card {
         position: relative;
         z-index: 1;
-        
+
         display: flex;
         align-items: center;
 
         width: auto;
         min-width: rem(300px);
         padding: rem(22px) rem(28px);
-
+      @media (max-width: $container-width-mobile-big) {
+        padding: rem(22px);
+      }
         border-radius: rem($border-radius-big);
         background-color: $fill-col-primary;
 
@@ -95,11 +108,23 @@ const cards = [
 
             margin-left: rem(14px);
 
+          @media (max-width: $container-width-mobile-big) {
+            @include text-average;
+          }
             white-space: nowrap;
         }
     }
 
     &__image {
+
+      @media (max-width: 1350px) and (min-width: $container-width-mobile-big) {
+        display: none;
+      }
+
+      @media (max-width: $container-width-mobile-big)  {
+        position: relative;
+        transform: translateX(0);
+      }
         position: absolute;
         z-index: 0;
         right: 0;

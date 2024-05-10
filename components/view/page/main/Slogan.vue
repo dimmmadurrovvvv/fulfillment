@@ -19,39 +19,56 @@
 
 <style scoped lang="scss">
 .main-page-slogan {
-    position: relative;
 
-    height: rem(616px);
+    position: relative;
+  padding-top: 65px;
+  padding-bottom: 65px;
 
     background-color: $fill-col-primary-muted;
 
+  @media (max-width: $container-width-laptop) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  @media (max-width: $container-width-mobile-big) {
+    display: none;
+  }
     &__inner {
         @include container;
 
         display: flex;
         align-items: center;
         height: 100%;
+
+      @media (max-width: $container-width-laptop) {
+        flex-direction: column;
+        justify-content: center;
+      }
     }
 
     &__title {
         max-width: 50%;
+      @media (max-width: $container-width-laptop) {
+        max-width: 100%;
+        text-align: center;
+      }
         &-text {
             @include font-title;
             @include text-huge;
 
             line-height: 1.4;
+
+          @media (max-width: $container-width-tablet) {
+            @include text-great;
+          }
         }
     }
 
     &__image {
-        position: absolute;
-        z-index: 0;
-        right: 0;
-        height: 100%;
-        width: 50%;
+        position: relative;
+        height: 415px;
 
         &-pic {
-            @include absolute-all-null;
             @include object-contain-full;
         }
     }

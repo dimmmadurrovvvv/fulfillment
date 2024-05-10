@@ -21,8 +21,20 @@
     &__section {
         @include y-margin-items(180px);
 
-        &--advantages {
+      @media (max-width: $container-width-tablet) {
+        margin-top: rem(90px);
+      }
+
+      @media (max-width: $container-width-mobile-big) {
+        margin-top: rem(60px);
+      }
+
+
+      &--advantages {
             margin-top: rem(126px);
+          @media (max-width: $container-width-tablet) {
+            margin-top: rem(60px);
+          }
         }
     }
 }

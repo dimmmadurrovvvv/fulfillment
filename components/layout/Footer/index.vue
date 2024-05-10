@@ -1,7 +1,9 @@
 <template>
     <footer class="footer">
         <div class="footer__row">
-            <LayoutLogo size="big" />
+          <div class="footer__logo">
+            <LayoutLogo />
+          </div>
         </div>
 
         <div class="footer__row">
@@ -50,16 +52,43 @@ const links = [
     padding-top: rem(50px);
     padding-bottom: rem(70px);
 
+  &__logo {
+    width: rem(155px);
+    height: rem(155px);
+
+    @media (max-width: $container-width-tablet) {
+      width: rem(118px);
+      height: rem(118px);
+    }
+
+    @media (max-width: $container-width-mobile) {
+      width: rem(110px);
+      height: rem(110px);
+    }
+  }
+
     &__row {
         @include y-margin-items(90px);
+
+      @media (max-width: $container-width-mobile) {
+        @include y-margin-items(50px);
+      }
     }
 
     &__links {
         display: flex;
         align-items: center;
 
+      @media (max-width: $container-width-tablet) {
+        flex-direction: column;
+        text-align: center;
+        gap: 26px;
+      }
         &-item {
             @include x-margin-items(26px);
+          @media (max-width: $container-width-tablet) {
+            margin: 0;
+          }
         }
     }
 

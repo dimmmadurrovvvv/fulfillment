@@ -38,10 +38,13 @@ const items = [
     &__collapse {
         &-item {
             @include y-margin-items(20px);
-
             &-text {
                 @include text-big($font-weight-regular);
 
+              @media (max-width: $container-width-tablet) {
+                @include text-normal;
+                font-weight: 400;
+              }
                 color: $txt-col-tetriary;
             }
         }

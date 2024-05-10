@@ -6,7 +6,10 @@
 
     padding-left: rem(34px);
     padding-right: rem(34px);
-
+    @media (max-width: $container-width-mobile-big) {
+      padding-left: rem(18px);
+      padding-right: rem(18px);
+    }
     border: 2px solid transparent;
     border-radius: rem(20px);
     background-color: $fill-col-primary;
@@ -20,14 +23,18 @@
       @include text-big($font-weight-semibold);
 
       height: rem(140px);
-
+      @media (max-width: $container-width-mobile-big) {
+        height: 125px;
+      }
       color: $txt-col-primary;
       border: none;
       background-color: transparent;
 
       white-space: pre-line;
       text-align: start;
-
+      @media (max-width: $container-width-mobile-big) {
+        font-weight: 500;
+      }
       &.is-active {
         color: $txt-col-primary;
       }

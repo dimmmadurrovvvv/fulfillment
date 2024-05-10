@@ -125,17 +125,31 @@ function onCardButtonClick(callback: () => any, title: string) {
         flex-wrap: wrap;
         row-gap: rem(20px);
 
+      @media (max-width:$container-width-laptop) {
+        flex-direction: column;
+      }
+
         &-item {
             @include flex-item-width(3, 20px);
-
+          @media (max-width:$container-width-laptop) {
+            width: 100%;
+          }
             &:first-child {
                 margin-top: rem(20px);
 
                 .main-page-services__card {
                     height: rem(201px);
-
+                  @media (max-width:$container-width-laptop) {
+                    height: 100%;
+                  }
                     &-description {
                         width: 63%;
+                      @media (max-width:$container-width-laptop) {
+                        width: 100%;
+                      }
+                      @media (max-width: $container-width-mobile-big) {
+                       @include text-average;
+                      }
                     }
                 }
             }
@@ -149,7 +163,7 @@ function onCardButtonClick(callback: () => any, title: string) {
 
     &__card {
         position: relative;
-
+      height: 100%;
         display: flex;
         justify-content: space-between;
 
@@ -158,18 +172,44 @@ function onCardButtonClick(callback: () => any, title: string) {
         border-radius: rem($border-radius-medium);
         background-color: $fill-col-secondary;
 
-        &-inner {}
+      @media (max-width:$container-width-laptop) {
+        padding: rem(24px);
+
+        .big & {
+          flex-direction: column;
+          gap: 40px;
+        }
+      }
+        &-inner {
+          @media (max-width:$container-width-laptop) {
+            width: 100%;
+          }
+        }
 
         &-title {
             @include font-title;
             @include text-huge;
 
             margin-bottom: rem(20px);
+
+          @media (max-width: $container-width-tablet) {
+            @include text-great;
+          }
+          @media (max-width: $container-width-mobile-big) {
+            @include text-big;
+            text-align: center;
+          }
         }
 
         &-subtitle {
             font-size: rem(24px);
             font-weight: $font-weight-medium;
+          @media (max-width:$container-width-laptop) {
+            text-align: center;
+          }
+          @media (max-width:$container-width-mobile-big) {
+            text-align: left;
+          }
         }
 
         &-description {
@@ -178,6 +218,9 @@ function onCardButtonClick(callback: () => any, title: string) {
 
         &-details-button {
             margin-top: rem(52px);
+          @media (max-width:$container-width-laptop) {
+            width: 100%;
+          }
         }
 
         &-image {
@@ -185,9 +228,19 @@ function onCardButtonClick(callback: () => any, title: string) {
             right: 10%;
             top: 0;
             height: 100%;
-
+          @media (max-width:$container-width-laptop) {
+            position: relative;
+            right: 0;
+            margin-left: auto;
+          }
+          @media (max-width:$container-width-mobile-big) {
+            margin: 0 auto;
+          }
             &-pic {
                 @include object-contain-full;
+              @media (max-width:$container-width-laptop) {
+                max-height: 195px;
+              }
             }
         }
     }

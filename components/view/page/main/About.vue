@@ -16,11 +16,19 @@
                     Нашими клиентами являются и могут стать как начинающие предприниматели, так и крупные производственные компании или дистрибьютеры, заинтересованные в новых каналах продаж своей продукции.
                 </p>
 
+              <div class="main-page-about__row">
                 <UiButton class="main-page-about__info-detail-button"
-                    text="Подробнее" />
+                          text="Подробнее" />
+                <div class="main-page-about__image _tablet">
+                  <img class="main-page-about__image-pic"
+                       src="/images/static/cv-with-hands.png"
+                       alt="Документ в руках">
+                </div>
+              </div>
+
             </div>
 
-            <div class="main-page-about__image">
+            <div class="main-page-about__image _mobile">
                 <img class="main-page-about__image-pic"
                     src="/images/static/cv-with-hands.png"
                     alt="Документ в руках">
@@ -37,32 +45,72 @@
         @include container;
 
         display: flex;
+
+      @media (max-width: $container-width-mobile-big) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 1350px) and (min-width: $container-width-mobile-big) {
+        display: block;
+      }
     }
 
+  &__row {
+    margin-top: rem(40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
     &__info {
         position: relative;
         z-index: 1;
-        
-        width: rem(958px);
+
 
         &-title {
             @include font-title;
             @include text-huge;
+
+          @media (max-width: $container-width-tablet) {
+            @include text-great;
+          }
+          @media (max-width: $container-width-mobile-big) {
+            @include text-big;
+            text-align: center;
+          }
         }
 
         &-paragraph {
             @include text-big($font-weight-medium, $line-height-big);
-            width: rem(700px);
+            max-width: rem(700px);
             margin-top: rem(20px);
-        }
-
-        &-detail-button {
-            margin-top: rem(40px);
         }
     }
 
     &__image {
-        position: absolute;
+
+      &._tablet {
+        display: none;
+        @media (max-width: 1350px) and (min-width: $container-width-mobile-big) {
+          display: block;
+        }
+      }
+
+      &._mobile {
+        display: block;
+        @media (max-width: 1350px) and (min-width: $container-width-mobile-big) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 1350px)  {
+        position: relative;
+      }
+
+      @media (max-width: $container-width-mobile-big) {
+        margin-top: 60px;
+        width: 100%;
+      }
+      position: absolute;
         z-index: 0;
         right: 0;
 
@@ -72,6 +120,10 @@
         &-pic {
             @include absolute-all-null;
             @include object-contain-full;
+
+          @media (max-width: 1350px)  {
+            position: relative;
+          }
         }
 
     }

@@ -29,7 +29,7 @@
                     </li>
                 </ul>
 
-                <UiButton class="main-page-stocks__details-button"
+                <UiButton class="main-page-stocks__details-button _pc"
                     text="Узнать больше"
                     theme="transparent" />
             </div>
@@ -40,6 +40,10 @@
                     alt="Фото склада">
 
             </div>
+
+          <UiButton class="main-page-stocks__details-button _mobile"
+                    text="Узнать больше"
+                    theme="transparent" />
         </div>
     </section>
 </template>
@@ -61,9 +65,24 @@ const cards = [
     &__meta {
         @include flex-space-between;
 
+      @media (max-width: $container-width-laptop) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      @media (max-width: $container-width-mobile-big) {
+        align-items: center;
+      }
         &-title {
             @include font-title;
             @include text-huge;
+
+          @media (max-width: $container-width-tablet) {
+            @include text-great;
+          }
+          @media (max-width: $container-width-mobile-big) {
+            @include text-big;
+          }
         }
 
         &-subtitle {
@@ -72,6 +91,15 @@ const cards = [
             max-width: 30%;
 
             text-align: end;
+
+          @media (max-width: $container-width-laptop) {
+            max-width: 100%;
+            text-align: left;
+          }
+
+          @media (max-width: $container-width-mobile-big) {
+            display: none;
+          }
         }
     }
 
@@ -79,10 +107,18 @@ const cards = [
         display: flex;
 
         margin-top: rem(20px);
+
+      @media (max-width: $container-width-laptop) {
+        flex-direction: column;
+        gap: 20px;
+      }
     }
 
     &__content {
         width: rem(460px);
+      @media (max-width: $container-width-laptop){
+        width: 100%;
+      }
     }
 
     &__cards {
@@ -115,6 +151,21 @@ const cards = [
 
     &__details-button {
         margin-top: rem(100px);
+
+      &._mobile {
+        display: none;
+        @media (max-width: $container-width-laptop) {
+          display: block;
+          margin-top: rem(40px);
+        }
+      }
+
+      &._pc {
+        display: block;
+        @media (max-width: $container-width-laptop) {
+          display: none;
+        }
+      }
     }
 
     &__image {
@@ -127,9 +178,16 @@ const cards = [
 
         border-radius: rem($border-radius-medium);
 
+      @media (max-width: $container-width-laptop) {
+        margin-left: 0;
+      }
         &-pic {
             @include absolute-all-null;
             @include object-cover-full;
+
+          @media (max-width: $container-width-laptop) {
+            position: relative;
+          }
         }
     }
 }

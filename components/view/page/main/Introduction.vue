@@ -9,11 +9,21 @@
                 <p class="main-page-introduction__info-subtitle">
                     Доставим ваши товары от Китая до маркетплейса
                 </p>
+              <div class="main-page-introduction__row">
                 <UiButton text="Стать клиентом"
-                    class="main-page-introduction__info-submit" />
+                          class="main-page-introduction__info-submit" />
+                <div class="main-page-introduction__image _tablet">
+                  <img class="main-page-introduction__image-pic"
+                       src="/images/static/marketplaces-with-truck.png"
+                       alt="Иллюстрация грузовика">
+                </div>
+              </div>
+
             </div>
 
-            <div class="main-page-introduction__image">
+
+
+            <div class="main-page-introduction__image _mobile">
                 <img class="main-page-introduction__image-pic"
                     src="/images/static/marketplaces-with-truck.png"
                     alt="Иллюстрация грузовика">
@@ -31,21 +41,32 @@ const title = 'Order care - Ваш фулфилмент полного цикл�
 
 <style scoped lang="scss">
 .main-page-introduction {
-    $height-desktop: 500px;
-
-    height: rem($height-desktop);
-
+  padding-bottom: 80px;
+  @media (max-width: $container-width-tablet) {
+    padding-bottom: 0;
+  }
     background-color: $fill-col-secondary;
 
     &__inner {
         @include container;
 
         display: flex;
+
+      @media (max-width: $container-width-mobile-big) {
+        flex-direction: column;
+      }
     }
 
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
     &__info {
         margin-top: rem(100px);
-
+      @media (max-width: $container-width-tablet){
+        margin-top: rem(60px);
+      }
         &-title {
             @include text-huge($font-weight-regular, $line-height-medium);
             @include font-title;
@@ -65,11 +86,30 @@ const title = 'Order care - Ваш фулфилмент полного цикл�
     }
 
     &__image {
+      &._tablet {
+        display: none;
+        @media (max-width: $container-width-tablet) and (min-width: $container-width-mobile-big) {
+          display: block;
+        }
+      }
+
+      &._mobile {
+        display: block;
+        @media (max-width: $container-width-tablet) and (min-width: $container-width-mobile-big) {
+          display: none;
+        }
+      }
+
+
         margin-top: rem(58px);
         margin-left: auto;
 
         width: 590px;
 
+      @media (max-width: $container-width-tablet) {
+        width: 100%;
+        object-fit: cover;
+      }
         &-pic {
             @include object-contain-full;
         }

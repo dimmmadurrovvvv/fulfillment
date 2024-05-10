@@ -38,21 +38,34 @@
 .main-page-consultation {
 
     background-color: $fill-col-secondary;
+  padding-bottom: 80px;
 
-    height: 610px;
+  @media (max-width: $container-width-laptop) {
+    padding-top: 45px;
+    padding-bottom: 20px;
+  }
 
     &__inner {
         @include container;
 
         display: flex;
         justify-content: space-between;
+      @media (max-width: $container-width-laptop) {
+        flex-direction: column;
+      }
     }
 
     &__image {
         width:55%;
         min-height: 100%;
         margin-left: rem(52px);
-
+      @media (max-width: $container-width-laptop) {
+        width: 100%;
+        margin-left: 0;
+      }
+      @media (max-width: $container-width-mobile-big) {
+        display: none;
+      }
         &-pic {
             @include object-contain-full;
         }
@@ -66,12 +79,27 @@
 
         width: 45%;
         margin-top: rem(80px);
-
+      @media (max-width: $container-width-laptop) {
+        width: 80%;
+        margin: 0 auto;
+      }
+      @media (max-width: $container-width-mobile-big) {
+        width: 100%;
+      }
         &-title {
             @include font-title;
             @include text-huge;
 
             margin-bottom: rem(20px);
+          @media (max-width: $container-width-laptop) {
+            text-align: center;
+          }
+          @media (max-width: $container-width-tablet) {
+            @include text-great;
+          }
+          @media (max-width: $container-width-mobile-big) {
+            @include text-big;
+          }
         }
 
         &-control {
@@ -96,6 +124,10 @@
         &-submit {
             width: fit-content;
             margin-top: rem(82px);
+          @media (max-width: $container-width-laptop) {
+            margin: 0 auto;
+            margin-top: rem(82px);
+          }
         }
     }
 }
