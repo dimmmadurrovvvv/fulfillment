@@ -104,7 +104,7 @@ const cards = [
         ],
         button: {
             text: 'Подробнее',
-            callback: () => window.open('/public/file/pricing.pdf', '_blank')
+            callback: () => window.open('/file/pricing.pdf', '_blank')
         }
     },
     {
