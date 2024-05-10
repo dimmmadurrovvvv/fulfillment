@@ -70,6 +70,10 @@ const headerLinks = [
 </script>
 
 <style scoped lang="scss">
+
+html {
+  scroll-behavior: smooth;
+}
 .header {
     height: rem($header-height-desktop);
 
@@ -120,10 +124,6 @@ const headerLinks = [
     }
 }
 
-
-.html {
-  scroll-behavior: smooth;
-}
 .header__row {
   @media (min-width: $container-width-tablet) {
     display: none;

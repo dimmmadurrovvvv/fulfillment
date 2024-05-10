@@ -38,6 +38,9 @@
 </template>
 
 <style scoped lang="scss">
+html {
+  scroll-behavior: smooth;
+}
 .main-page-about {
     position: relative;
 
