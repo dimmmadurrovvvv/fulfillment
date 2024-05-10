@@ -82,7 +82,8 @@ const cards = [
         button: {
             text: 'Узнать больше',
             callback: () => { }
-        }
+        },
+        big: true
     },
     {
         subtitle: 'Фулфилмент "под ключ',
