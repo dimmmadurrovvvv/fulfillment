@@ -39,7 +39,7 @@
                 </li>
                 <li>
                   <a class="header__nav-links-item-link"
-                     href="tel:+74959999999">
+                     href="tel:+79060060064">
                      +7 (906) 006 00 64
                   </a>
                 </li>
