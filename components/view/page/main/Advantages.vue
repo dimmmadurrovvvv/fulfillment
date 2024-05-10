@@ -1,5 +1,5 @@
 <template>
-    <section class="main-page-advantages">
+    <section id="Advantages" class="main-page-advantages">
         <div class="main-page-advantages__inner">
 
             <ul class="main-page-advantages__list">

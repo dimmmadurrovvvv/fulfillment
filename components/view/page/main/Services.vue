@@ -1,5 +1,5 @@
 <template>
-    <section class="main-page-services">
+    <section id ="services" class="main-page-services">
         <ul class="main-page-services__list">
             <li class="main-page-services__list-item"
                 :class="{ 'big': card?.big }"

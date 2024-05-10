@@ -1,5 +1,5 @@
 <template>
-    <section class="main-page-faq">
+    <section id="faq" class="main-page-faq">
         <ElCollapse class="main-page-faq__collapse">
             <ElCollapseItem class="main-page-faq__collapse-item"
                 v-for="(item, idx) in items"

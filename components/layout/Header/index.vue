@@ -55,11 +55,11 @@
 
 const headerLinks = [
     { text: 'О нас', path: './#about' },
-    { text: 'Наш склад', path: '#' },
-    { text: 'Наши услуги', path: '#' },
-    { text: 'Наши цены', path: '#' },
-    { text: 'FAQ', path: '#' },
-    { text: 'Связь с нами', path: '#' },
+    { text: 'Наш склад', path: './#stocks' },
+    { text: 'Наши услуги', path: './#services' },
+    { text: 'Наши цены', path: './#pricing' },
+    { text: 'FAQ', path: './#faq' },
+    { text: 'Связь с нами', path: './#feedback' },
 ]
 
   document?.addEventListener('click', function (e) {
