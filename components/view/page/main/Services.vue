@@ -64,7 +64,7 @@
             </li>
           </ul>
         </div>
-          <div class="popup-base__footer">
+          <div class="popup-base__footer" style="display: none">
             <UiButton class="popup-base__footer-button" text="Скачать прайс" />
             <UiButton
               class="popup-base__footer-button"
