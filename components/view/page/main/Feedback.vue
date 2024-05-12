@@ -1,26 +1,37 @@
 <template>
-    <section id="feedback" class="main-page-consultation">
+    <section class="main-page-consultation">
 
         <div class="main-page-consultation__inner">
 
-            <form class="main-page-consultation__form">
+            <form class="main-page-consultation__form" ref="form">
                 <h4 class="main-page-consultation__form-title">
                     Остались еще вопросы?
                 </h4>
 
                 <input class="main-page-consultation__form-control"
                     type="text"
+                       name="name"
+                       v-model="name"
                     placeholder="Ваше имя">
                 <input class="main-page-consultation__form-control"
                     type="text"
-                    placeholder="+7 (963)">
+                       name="number"
+                       v-model="number"
+                    placeholder="Ваш номер">
+              <input class="main-page-consultation__form-control"
+                    type="email"
+                     name="email"
+                     v-model="email"
+                    placeholder="Ваша почта">
                 <input class="main-page-consultation__form-control"
                     type="text"
+                       name="message"
+                       v-model="message"
                     placeholder="Ваш вопрос">
 
                 <UiButton class="main-page-consultation__form-submit"
                     text="Отправить"
-                    @click.prevent />
+                @click="sendEmail"/>
 
             </form>
 
@@ -33,6 +44,46 @@
 
     </section>
 </template>
+
+<script>
+import emailjs from 'emailjs-com';
+
+export default {
+  name: 'ContactUs',
+  data() {
+    return {
+      name: '',
+      email: '',
+      number: '',
+      message: ''
+    }
+  },
+  methods: {
+    sendEmail(e) {
+      e.preventDefault()
+      if (!this.name.length && !this.email.length && !this.message.length && !this.number.length) return
+
+      try {
+        emailjs.sendForm('service_fysxkzp', 'template_67ys5lw', this.$refs.form,
+            'gjGvAazUCWBuNWXu0', {
+              name: this.name,
+              email: this.email,
+              message: this.message,
+              number: this.number,
+            })
+
+      } catch(error) {
+        console.log({error})
+      }
+      // Reset form field
+      this.name = ''
+      this.email = ''
+      this.number = ''
+      this.message = ''
+    },
+  }
+}
+</script>
 
 <style scoped lang="scss">
 .main-page-consultation {
